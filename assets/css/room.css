@@ -1,0 +1,6 @@
+#video-box{
+    display: grid;
+    grid-auto-rows: 400px;
+    grid-template-columns: repeat(auto-fill,400px);
+    
+}

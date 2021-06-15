@@ -5,5 +5,7 @@ const homeController = require('../controllers/home_controller');
 console.log('Router Loaded');
 
 router.get('/',homeController.home);
+router.get('/call',homeController.make_call);
+router.use('/room',require('./room'));
 
 module.exports = router;
