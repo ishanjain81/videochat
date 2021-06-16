@@ -3,6 +3,10 @@
         <script>
             const roomId = "<%= roomId %>"
         </script>
+        <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+        <!-- <script src="/socket.io/socket.io.js" defer></script> -->
+        <script src="/js/socket_connection.js" defer></script>
         <title>
             <%= title %>
         </title>
@@ -12,8 +16,5 @@
         <div id="video-box"></div>
         <h1>Room</h1>
         <!-- <h3><%= roomId %></h3> -->
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
-        <script src="/js/socket_connection.js"></script>
     </body>
 </html>

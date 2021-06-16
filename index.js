@@ -8,6 +8,15 @@ const chatSockets = require('./config/sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is listening on port 5000');
 
+// set up peer server
+const pServer = require('http').Server(app);
+const { ExpressPeerServer } = require('peer');
+const peerServer = ExpressPeerServer(pServer, {
+    debug: true,
+});
+pServer.listen(5001);
+app.use('/peerjs', peerServer);
+console.log('Peer server is listening on port 5001');
 
 app.use(express.static('./assets'));
 

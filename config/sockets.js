@@ -1,15 +1,20 @@
 module.exports.chatSockets = function(socketServer){
-    let io = require('socket.io')(socketServer,{cors :{
-        origin : "*"
-    }});
+
+    let io = require('socket.io')(socketServer,{
+        cors: {
+            origin: "http://localhost:8000",
+            credentials: true,
+            methods: ["GET", "POST"],
+            allowedHeaders: ["sockets"],
+        }
+    });
     const { v4: uuidv4 } = require('uuid');
-    
 
     io.sockets.on('connection',function(socket){
         console.log('A connection received',socket.id);
 
         socket.on('join_room',(roomId,userId) => {
-            console.log(roomId + " " + userId);
+            console.log("Room Id:" + roomId + " userId:" + userId);
 
             socket.join(roomId);
             socket.to(roomId).emit('user_connected',userId);
