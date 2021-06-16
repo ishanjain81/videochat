@@ -1,5 +1,8 @@
 <html>
     <head>
+        <script>
+            const roomId = "<%= roomId %>"
+        </script>
         <title>
             <%= title %>
         </title>
@@ -8,6 +11,7 @@
     <body>
         <div id="video-box"></div>
         <h1>Room</h1>
+        <!-- <h3><%= roomId %></h3> -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
         <script src="/js/socket_connection.js"></script>
