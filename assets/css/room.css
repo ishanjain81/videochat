@@ -2,5 +2,9 @@
     display: grid;
     grid-auto-rows: 400px;
     grid-template-columns: repeat(auto-fill,400px);
-    
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

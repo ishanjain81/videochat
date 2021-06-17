@@ -17,8 +17,12 @@ module.exports.chatSockets = function(socketServer){
             console.log("Room Id:" + roomId + " userId:" + userId);
 
             socket.join(roomId);
-            socket.to(roomId).emit('user_connected',userId);
+            socket.broadcast.to(roomId).emit('user_connected',userId);
             // broadcast to everyone in the room that a user is connected
+
+            socket.on('disconnect',function(){
+                socket.broadcast.to(roomId).emit('user_disconnected',userId);
+            });
         });
     });
 }
