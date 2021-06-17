@@ -9,10 +9,12 @@ const socket = io.connect('http://localhost:5000',{
 
 socket.on('connect',function(){
     console.log('Connection estlablished using sockets.....');
-    const myPeer = new Peer(undefined,{
+    const customGenerationFunction = () => (Math.random().toString(36) + '0000000000000000000').substr(2, 16);
+    const myPeer = new Peer({
         host : 'localhost',
         port : '5001',
-        path : '/peerjs'
+        path : '/peerjs',
+        generateClientId: customGenerationFunction
     });
 
     //setting our own video
@@ -40,15 +42,19 @@ socket.on('connect',function(){
 
         socket.on('user_connected',function(userId){
             console.log(`User connected : ${userId}`);
-            connectToNewUser(userId,stream);
+
+            setTimeout(()=>{
+                connectToNewUser(userId,stream)
+            },1000);
+            // connectToNewUser(userId,stream);
         });
     });
 
     socket.on('user_disconnected',userId => {
         console.log('User Disconnected:' + userId);
-        if(peers[userId]){
-            peers[userId].close();
-        }
+            if(peers[userId]){
+                peers[userId].close();
+            }
     });
 
     myPeer.on('open', id => {
