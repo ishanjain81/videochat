@@ -35,14 +35,18 @@ socket.on('connect',function(){
         myPeer.on('call',function(call){
             call.answer(stream);
             const video = document.createElement('video');
+            peers[call.peer] = call;
             call.on('stream',function(userVideoStream){
                 streamVideo(video,userVideoStream);
+            });
+            call.on('close',function(){
+                video.remove();
             });
         });
 
         socket.on('user_connected',function(userId){
             console.log(`User connected : ${userId}`);
-
+            
             setTimeout(()=>{
                 connectToNewUser(userId,stream)
             },1000);
