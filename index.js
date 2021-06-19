@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const expressLayouts = require('express-ejs-layouts');
 
 // set up server with socket.io
 const chatServer = require('http').Server(app);
@@ -17,6 +18,9 @@ const peerServer = ExpressPeerServer(pServer, {
 pServer.listen(5001);
 app.use('/peerjs', peerServer);
 console.log('Peer server is listening on port 5001');
+
+//using layouts
+app.use(expressLayouts);
 
 app.use(express.static('./assets'));
 
