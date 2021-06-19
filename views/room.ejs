@@ -6,18 +6,23 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
 <script src="/js/socket_connection.js" defer></script>
 <link rel="stylesheet" href="/css/room.css">
-<div id="left-part"></div>
-    <div class="videos">
-        <div id="video-box"></div>
+<link rel="stylesheet" href="/css/chat_box.css">
+<div id="main">
+    <div id="left-part">
+        <div class="videos">
+            <div id="video-box"></div>
+        </div>
+        <div class="left-options">
+            <div id="videoStop">
+                <button> Video </button>
+            </div>
+            <div id="muteButton">
+                <button class="stop-button"> Audio </button>
+            </div>
+        </div>
     </div>
-    <div class="left-options">
-        <div id="videoStop">
-            <button> Video </button>
-        </div>
-        <div id="muteButton">
-            <button class="stop-button"> Audio </button>
-        </div>
+    <div id="right-part">
+        <%- include('_chat_box'); %>
     </div>
 </div>
-
 <script src="/js/room.js"></script>

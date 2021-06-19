@@ -1,3 +1,24 @@
+header{
+    height: 7%;
+}
+#left-part{
+    width: 74%;
+    display: inline-block;
+    border: 1px solid black;
+    height: 92%;
+    position: relative;
+    left: 0%;
+    top: 4%;
+}
+#right-part{
+    width: 26%;
+    display: inline-block;
+    border: 1px solid black;
+    height: 92%;
+    position: fixed;
+    right: 0%;
+    top: 7%;
+}
 #video-box{
     /* display: grid;
     grid-auto-rows: 400px;
@@ -24,7 +45,6 @@ video{
 .left-options div{
     display: inline-block;
 }
-
 .options-color{
     color: red;
 }
