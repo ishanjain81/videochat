@@ -6,7 +6,7 @@ const socket = io.connect('http://localhost:5000',{
             "sockets": "abcd"
         }
 });
-
+let myVideoStream;
 socket.on('connect',function(){
     console.log('Connection estlablished using sockets.....');
     const customGenerationFunction = () => (Math.random().toString(36) + '0000000000000000000').substr(2, 16);
@@ -31,7 +31,7 @@ socket.on('connect',function(){
         audio: true
     }).then(stream =>{
         streamVideo(myVideo,stream);
-
+        myVideoStream = stream;
         myPeer.on('call',function(call){
             call.answer(stream);
             const video = document.createElement('video');

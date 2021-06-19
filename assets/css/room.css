@@ -20,3 +20,11 @@ video{
     -moz-transform: rotateY(180deg);
     border: 1px solid black;
 }
+
+.left-options div{
+    display: inline-block;
+}
+
+.options-color{
+    color: red;
+}
