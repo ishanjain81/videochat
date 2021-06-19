@@ -19,10 +19,14 @@ pServer.listen(5001);
 app.use('/peerjs', peerServer);
 console.log('Peer server is listening on port 5001');
 
+//setting static files
+app.use(express.static('./assets'));
+
 //using layouts
 app.use(expressLayouts);
-
-app.use(express.static('./assets'));
+//for styles and scripts in layouts
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 //use ejs & set up view engine
 app.set('view engine','ejs');
