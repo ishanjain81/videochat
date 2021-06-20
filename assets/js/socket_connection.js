@@ -72,7 +72,6 @@ socket.on('connect',function(){
     // For Chatting Engine
     let chatBox = document.getElementById('user-chat-box');
     let sendMessage = document.getElementById('send-message');
-    let msg = document.getElementById('chat-message-input').value;
     //send Message on Click
     sendMessage.addEventListener('click',() => {
         // console.log(msg);
