@@ -24,5 +24,10 @@ module.exports.chatSockets = function(socketServer){
                 socket.broadcast.to(roomId).emit('user_disconnected',userId);
             });
         });
+
+        socket.on('send_message',function(data){
+            io.in(data.roomId).emit('recieve_message',data);
+            // console.log(data);
+        });
     });
 }

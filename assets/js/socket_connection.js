@@ -7,6 +7,7 @@ const socket = io.connect('http://localhost:5000',{
         }
 });
 let myVideoStream;
+let myId;
 socket.on('connect',function(){
     console.log('Connection estlablished using sockets.....');
     const customGenerationFunction = () => (Math.random().toString(36) + '0000000000000000000').substr(2, 16);
@@ -63,9 +64,65 @@ socket.on('connect',function(){
 
     myPeer.on('open', id => {
         socket.emit('join_room',roomId,id);
+        myId = id;
     });
     //Rendering our own video
     // socket.emit('join_room',roomId,10);
+
+    // For Chatting Engine
+    let chatBox = document.getElementById('user-chat-box');
+    let sendMessage = document.getElementById('send-message');
+    let msg = document.getElementById('chat-message-input').value;
+    //send Message on Click
+    sendMessage.addEventListener('click',() => {
+        // console.log(msg);
+        let msg = document.getElementById('chat-message-input').value;
+        if(msg != ''){
+            socket.emit('send_message',{
+                message: msg,
+                roomId: roomId,
+                id : myId
+            });
+        }
+    });
+    //send Message on Enter
+    let msgContainer = document.getElementById('chat-message-input');
+    msgContainer.addEventListener("keyup",(event) => {
+        if(event.key === 'Enter'){
+            let msg = document.getElementById('chat-message-input').value;
+            if(msg != ''){
+                socket.emit('send_message',{
+                    message: msg,
+                    roomId: roomId,
+                    id : myId
+                });
+            }
+        }
+    });
+    socket.on('recieve_message',function(data){
+        console.log('message recieved',data.message);
+
+        let newMessage = $('<li>');
+
+        let messageType = 'other-message';
+
+        if(data.id == myId){
+            messageType = 'self-message';
+        }
+
+        newMessage.append($('<span>',{
+            'html': data.message
+        }));
+
+        newMessage.append($('<br>'));
+
+
+        newMessage.addClass(messageType);
+
+        $('#chat-messages-list').append(newMessage);
+    });
+
+
     function connectToNewUser(userId,stream){
         const call = myPeer.call(userId,stream);
         const video = document.createElement('video');
