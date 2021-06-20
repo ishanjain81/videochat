@@ -1,5 +1,7 @@
 const videoStop = document.querySelector('#videoStop');
 const muteButton = document.querySelector('#muteButton');
+const chatButton = document.querySelector('#chat-show');
+let chat = true;
 
 videoStop.addEventListener('click', () => {
     const enabled = myVideoStream.getVideoTracks()[0].enabled;
@@ -11,7 +13,7 @@ videoStop.addEventListener('click', () => {
       myVideoStream.getVideoTracks()[0].enabled = true;
       vButton.classList.remove('options-color');
     }
-  });
+});
 
 muteButton.addEventListener('click', () => {
     const enabled = myVideoStream.getAudioTracks()[0].enabled;
@@ -23,4 +25,19 @@ muteButton.addEventListener('click', () => {
       myVideoStream.getAudioTracks()[0].enabled = true;
       aButton.classList.remove('options-color');
     }
-  });
+});
+
+chatButton.addEventListener('click',() => {
+    let leftPart = document.getElementById('left-part');
+    let rightPart = document.getElementById('right-part');
+    if(chat){
+      leftPart.classList.add('left-full');
+      rightPart.classList.add('right-hide');
+      chat = false;
+    }
+    else{
+      leftPart.classList.remove('left-full');
+      rightPart.classList.remove('right-hide');
+      chat = true;
+    }
+});
