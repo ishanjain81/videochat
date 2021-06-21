@@ -82,6 +82,7 @@ socket.on('connect',function(){
                 roomId: roomId,
                 id : myId
             });
+            msgContainer.value = ""
         }
     });
     //send Message on Enter
@@ -95,6 +96,7 @@ socket.on('connect',function(){
                     roomId: roomId,
                     id : myId
                 });
+                msgContainer.value = ""
             }
         }
     });

@@ -2,7 +2,7 @@ header{
     height: 7%;
 }
 #left-part{
-    width: 74%;
+    // width: 74%;
     display: inline-block;
     border: 1px solid black;
     height: 92%;
@@ -11,7 +11,7 @@ header{
     top: 4%;
 }
 #right-part{
-    width: 26%;
+    // width: 26%;
     display: inline-block;
     border: 1px solid black;
     height: 92%;
@@ -48,11 +48,26 @@ video{
 .options-color{
     color: red;
 }
-
+.right-show{
+    // display: inline-block;
+    transition-timing-function: ease-in-out;
+    transition : width 1.8s;
+    width: 26%;
+}
 .right-hide{
-    display: none;
+    transition-timing-function: ease-in-out;
+    transition : width 1.8s;
+    // display: none;
+    width: 0%;
 }
 
+.left-half{
+    transition-timing-function: ease-in-out;
+    transition : width 1.8s;
+    width: 74%;
+}
 .left-full{
+    transition-timing-function: ease-in-out;
+    transition : width 1.8s;
     width: 100%;
 }
