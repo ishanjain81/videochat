@@ -41,3 +41,17 @@ chatButton.addEventListener('click',() => {
       chat = true;
     }
 });
+
+//Making Add friend button working
+
+const friendOpen = document.getElementById('friend-open');
+const friendClose = document.getElementById('friend-close');
+const friendBox = document.getElementById('friend-box');
+
+friendOpen.addEventListener('click',() => {
+    friendBox.classList.add('show');
+});
+
+friendClose.addEventListener('click',() => {
+  friendBox.classList.remove('show');
+});

@@ -13,7 +13,7 @@
         <div class="videos">
             <div id="video-box"></div>
         </div>
-        <div class="left-options">
+        <div id="left-options">
             <div id="videoStop">
                 <button> Video </button>
             </div>
@@ -21,12 +21,30 @@
                 <button> Audio </button>
             </div>
             <div id="chat-show">
-                <button> chat </button>
+                <button> Chat </button>
+            </div>
+            <div id="add-friend">
+                <button id="friend-open"> Add </button>
             </div>
         </div>
     </div>
     <div id="right-part" class="right-show">
         <%- include('_chat_box'); %>
+    </div>
+    <div id="friend-box" class="friend_box">
+        <div class="friend">
+            <h1>Hello friend</h1>
+            <p>the main written part of a book, newspaper, etc. 
+                the main written part of a book, newspaper, etc. 
+                the main written part of a book, newspaper, etc. 
+                the main written part of a book, newspaper, etc. 
+                the main written part of a book, newspaper, etc. 
+                the main written part of a book, newspaper, etc. 
+            </p>
+            <button id="friend-close">
+                Close
+            </button>
+        </div>
     </div>
 </div>
 <script src="/js/room.js"></script>
