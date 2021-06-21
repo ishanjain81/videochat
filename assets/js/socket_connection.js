@@ -121,6 +121,10 @@ socket.on('connect',function(){
         newMessage.addClass(messageType);
 
         $('#chat-messages-list').append(newMessage);
+
+        // Adding Automatic Scrolling on Recieving or sending Messages
+        const chatList = document.getElementById('chat-messages-list');
+        chatList.scrollTop = chatList.scrollHeight - chatList.clientHeight;
     });
 
 
