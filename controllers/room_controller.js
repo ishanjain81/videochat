@@ -10,7 +10,8 @@ module.exports.room_render = function(req,res){
 
 module.exports.invite = function(req,res){
     if(req.xhr){
-        console.log(req.body);
+        invite.inviteLink(req.body);
+        // console.log(req.body);
         return res.status(200).json({
             message: "Invite Send!"
         });
