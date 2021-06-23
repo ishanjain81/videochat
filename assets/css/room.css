@@ -106,5 +106,25 @@ video {
   left: 24%;
   padding: 30px 50px;
   border-radius: 5px; }
-  .friend h1 {
+  .friend h3 {
     margin: 0; }
+
+#friend-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  color: red; }
+
+#invite-form {
+  margin: 5px; }
+  #invite-form input {
+    width: 80%;
+    height: 35px;
+    outline: none;
+    border: 0.5px solid black;
+    font-size: 18px;
+    padding: 8px; }
+  #invite-form button {
+    height: 33px;
+    color: blue; }
