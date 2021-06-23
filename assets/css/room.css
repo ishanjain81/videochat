@@ -118,13 +118,13 @@ video {
 
 #invite-form {
   margin: 5px; }
-  #invite-form input {
+  #invite-form form input {
     width: 80%;
     height: 35px;
     outline: none;
     border: 0.5px solid black;
     font-size: 18px;
     padding: 8px; }
-  #invite-form button {
+  #invite-form form button {
     height: 33px;
     color: blue; }

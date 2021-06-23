@@ -38,10 +38,13 @@
                 <i class="fas fa-times"></i>
             </button>
             <div id="invite-form">
-                <input type="email" placeholder="Enter friend's Email">
-                <button><i class="fad fa-share-all"></i></button>
+                <form action="/room/invite" method="POST" id="invite-forms">
+                    <input type="email" name="email" placeholder="Enter friend's Email" required>
+                    <input  id="current-link" type="hidden" name="link" value="">
+                    <button type="submit"><i class="fad fa-share-all"></i></button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<script src="/js/room.js"></script>
+<script defer src="/js/room.js"></script>

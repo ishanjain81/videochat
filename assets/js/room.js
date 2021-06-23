@@ -55,3 +55,27 @@ friendOpen.addEventListener('click',() => {
 friendClose.addEventListener('click',() => {
   friendBox.classList.remove('show');
 });
+
+// Invite Link
+$('#invite-forms').submit(function(e){
+  // setting url in value
+    document.getElementById('current-link').value = window.location.href;
+    // to stop submit from default
+    e.preventDefault();
+    let d = $('#invite-forms').serialize();
+    //Make a ajax call to submit form
+    $.ajax({
+        type: 'post',
+        url: '/room/invite',
+        data: d,
+        success: function(data){
+          console.log(data);
+        },error: function(error){
+          console.log(error.resposeText);
+        }
+    });
+
+    // ressetting form after submitting
+    document.getElementById("invite-forms").reset();
+
+});

@@ -32,6 +32,12 @@ app.use(sassMiddleware({
 //setting static files
 app.use(express.static('./assets'));
 
+// To use AJAX
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+
 //using layouts
 app.use(expressLayouts);
 //for styles and scripts in layouts
