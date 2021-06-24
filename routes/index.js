@@ -7,5 +7,6 @@ console.log('Router Loaded');
 router.get('/',homeController.home);
 router.get('/call',homeController.make_call);
 router.use('/room',require('./room'));
+router.use('/users', require('./users'));
 
 module.exports = router;
