@@ -11,6 +11,8 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+const MongoStore = require('connect-mongo')(session);
+
 // set up server with socket.io
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/sockets').chatSockets(chatServer);
@@ -68,11 +70,22 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000*60*100)
-    }
+    }, // Setting Up Mongo Store to store Session Cookies
+    store: new MongoStore(
+        {
+            mongooseConnection: db,
+            autoRemove: 'disabled'
+        },
+        function(err){
+            console.log(err || 'Connect Mongo-DB Setup Ok');
+        }
+    )
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
 
 
 // use express router

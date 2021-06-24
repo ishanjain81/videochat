@@ -2,6 +2,10 @@ const User = require('../models/user');
 
 //render sign up page
 module.exports.signUp = function(req,res){
+    // if user already sign In
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('user_sign_up',{
         title: "Teams | Sign Up"
     })
@@ -9,6 +13,11 @@ module.exports.signUp = function(req,res){
 
 //render sign in page
 module.exports.signIn = function(req,res){
+    // if user already sign In
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
+    
     return res.render('user_sign_in',{
         title: "Teams | Sign In"
     })

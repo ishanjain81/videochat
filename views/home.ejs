@@ -3,3 +3,8 @@
 <form action="/call" method="GET">
     <input type="submit" value="Make a call">
 </form>
+
+<% if(locals.user){ %>
+    <%= user.first_name %>
+    <%= user.email %>
+<% } %>
