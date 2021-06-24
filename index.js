@@ -5,6 +5,12 @@ const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/mongoose');
 
+//Setting Up Session Cookie
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+
 // set up server with socket.io
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/sockets').chatSockets(chatServer);
@@ -39,6 +45,9 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+//Setting Up Cookies
+app.use(cookieParser());
+
 //using layouts
 app.use(expressLayouts);
 //for styles and scripts in layouts
@@ -48,6 +57,22 @@ app.set('layout extractScripts', true);
 //use ejs & set up view engine
 app.set('view engine','ejs');
 app.set('views','./views');
+
+
+//Setting Up Session
+app.use(session({
+    name: 'Teams',
+    // Secret Key
+    secret: 'Hello!Teams',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000*60*100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // use express router

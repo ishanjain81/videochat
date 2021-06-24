@@ -32,3 +32,9 @@ module.exports.create = function(req,res){
         }
     });
 }
+
+
+//Sign in data using passport
+module.exports.createSession = function(req,res){
+    return res.redirect('/');
+}
