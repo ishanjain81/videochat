@@ -4,7 +4,7 @@ header {
 #left-part {
   display: inline-block;
   border: 1px solid black;
-  height: 92%;
+  height: 94%;
   position: relative;
   left: 0%;
   top: 4%; }
@@ -12,10 +12,10 @@ header {
 #right-part {
   display: inline-block;
   border: 1px solid black;
-  height: 92%;
+  height: 94%;
   position: fixed;
   right: 0%;
-  top: 7%; }
+  top: 6%; }
 
 #video-box {
   /* display: grid;

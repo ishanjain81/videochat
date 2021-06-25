@@ -1,0 +1,34 @@
+header {
+  width: 100%;
+  height: 6%;
+  margin: 0%;
+  background-color: rgba(0, 110, 255, 0.849);
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  padding: 1px;
+  padding-bottom: 3px;
+  box-sizing: border-box; }
+  header #left {
+    width: 80%;
+    text-align: center; }
+    header #left h1 {
+      margin: 0px;
+      font-size: 32px;
+      color: white;
+      box-sizing: border-box;
+      padding: 2px; }
+  header #right {
+    width: 20%; }
+    header #right ul {
+      margin: 0px;
+      list-style: none;
+      display: flex; }
+      header #right ul li a {
+        text-decoration: none;
+        margin-left: 15px;
+        margin-right: 10px;
+        font-size: 30px;
+        color: white; }
+        header #right ul li a:hover {
+          color: lightgrey; }

@@ -1,25 +1,29 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    <h1>Teams</h1>
+    <div id="left">
+        <h1>Teams</h1>
+    </div>
+    <div id="right">
+        <ul>
+            <% if(locals.user){ %>
+                <li>  
+                    <a href=""><%= user.first_name %> <%= user.last_name %></a> 
+                </li>
+                <li>
+                    <a href="/users/sign-out">Sign-Out</a>
+                </li>
 
-    <ul>
-        <% if(locals.user){ %>
-            <li>  
-                <%= user.first_name %> 
-            </li>
-            <li>
-                <a href="/users/sign-out">Sign-Out</a>
-            </li>
+            <% }else { %>
+                
+                <li>
+                    <a href="/users/sign-in">Sign In</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">Sign Up</a>
+                </li>
 
-        <% }else { %>
-            
-            <li>
-                <a href="/users/sign-in">Sign In</a>
-            </li>
-            <li>
-                <a href="/users/sign-up">Sign Up</a>
-            </li>
-
-        <% } %>
-    </ul>
+            <% } %>
+        </ul>
+    </div>
 
 </header>
