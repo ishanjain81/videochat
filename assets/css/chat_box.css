@@ -21,6 +21,9 @@
       #user-chat-box #chat-messages-list .other-message span {
         display: inline-block;
         padding: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 20px;
         background-color: #ffa0a0; }
     #user-chat-box #chat-messages-list .self-message {
       text-align: right;
@@ -29,6 +32,9 @@
       #user-chat-box #chat-messages-list .self-message span {
         display: inline-block;
         padding: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 20px;
         background-color: #a0dcff; }
   #user-chat-box #chat-messages-list::-webkit-scrollbar {
     display: none; }

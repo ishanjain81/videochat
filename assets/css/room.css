@@ -1,22 +1,29 @@
-header {
-  height: 7%; }
+#room-head {
+  display: none;
+  height: 5%;
+  width: 100%;
+  text-align: center;
+  background-color: #2bdce2; }
+  #room-head h3 {
+    margin: 0; }
 
 #left-part {
   display: inline-block;
   border: 1px solid black;
-  height: 94%;
+  height: 95.2%;
   position: relative;
   left: 0%;
-  top: 4%;
+  top: 0%;
+  margin-top: 0;
   box-sizing: border-box; }
 
 #right-part {
   display: inline-block;
   border: 1px solid black;
-  height: 94%;
+  height: 95%;
   position: fixed;
   right: 0%;
-  top: 6%; }
+  top: 4.8%; }
 
 #video-box {
   /* display: grid;
