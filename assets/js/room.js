@@ -1,7 +1,6 @@
 const videoStop = document.querySelector('#videoStop');
 const muteButton = document.querySelector('#muteButton');
 const chatButton = document.querySelector('#chat-show');
-let chat = true;
 
 videoStop.addEventListener('click', () => {
     const enabled = myVideoStream.getVideoTracks()[0].enabled;
@@ -30,14 +29,23 @@ muteButton.addEventListener('click', () => {
 chatButton.addEventListener('click',() => {
     let leftPart = document.getElementById('left-part');
     let rightPart = document.getElementById('right-part');
+    let vi = document.getElementsByTagName('video');
     if(chat){
       leftPart.classList.add('left-full');
       rightPart.classList.add('right-hide');
+      vi[0].classList.add('m-topless');
+      if(vi[1]){
+        vi[1].classList.add('m-topless');
+      }
       chat = false;
     }
     else{
       leftPart.classList.remove('left-full');
       rightPart.classList.remove('right-hide');
+      vi[0].classList.remove('m-topless');
+      if(vi[1]){
+        vi[1].classList.remove('m-topless');
+      }
       chat = true;
     }
 });

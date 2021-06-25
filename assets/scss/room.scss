@@ -9,6 +9,7 @@ header{
     position: relative;
     left: 0%;
     top: 4%;
+    box-sizing: border-box;
 }
 #right-part{
     // width: 26%;
@@ -32,8 +33,8 @@ header{
     flex-shrink: 1;
 }
 video{
-    height: 45%;
-    width: 40%;
+    height: 52%;
+    width: 48%;
     object-fit: cover;
     margin: 2px;
     transform: rotateY(180deg);
@@ -41,8 +42,15 @@ video{
     -moz-transform: rotateY(180deg);
     border: 1px solid black;
 }
+.m-top{
+    margin-top: 90px;
+}
+.m-topless{
+    margin-top: 45px;
+}
 .videos{
     height: 93%;
+    box-sizing: border-box;
 }
 #left-options{
     // position: fixed;

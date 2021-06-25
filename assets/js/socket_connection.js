@@ -21,6 +21,7 @@ socket.on('connect',function(){
     //setting our own video
     const videoBox = document.getElementById('video-box');
     const myVideo = document.createElement('video');
+    myVideo.classList.add('m-top');
     //ensures that we dont hear our own voice
     myVideo.muted = true;
 
@@ -36,6 +37,7 @@ socket.on('connect',function(){
         myPeer.on('call',function(call){
             call.answer(stream);
             const video = document.createElement('video');
+            video.classList.add('m-top');
             peers[call.peer] = call;
             call.on('stream',function(userVideoStream){
                 streamVideo(video,userVideoStream);
@@ -131,6 +133,12 @@ socket.on('connect',function(){
     function connectToNewUser(userId,stream){
         const call = myPeer.call(userId,stream);
         const video = document.createElement('video');
+        if(chat){
+            video.classList.add('m-top');
+        }
+        else{
+            video.classList.add('m-topless');
+        }
         call.on('stream',function(userVideoStream){
             streamVideo(video,userVideoStream);
         });
