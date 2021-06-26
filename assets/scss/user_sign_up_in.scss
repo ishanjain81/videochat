@@ -161,14 +161,32 @@ body {
 }
 #sign-up-anchor{
 	text-align: center;
+	margin-top: 8px;
 }
 #Sign-In-anchor{
 	text-align: center;
+	margin-top: 8px;
 }
 .select_option select {
   &:hover + .select_arrow, &:focus + .select_arrow {
     border-top-color: $black;
   }
+}
+#google-sign{
+	padding: 0;
+	text-align: center;
+	height: auto;
+	button{
+		padding: 2px;
+		border-radius: 12px;
+		border: 1px solid gray;
+		&:hover{
+			box-shadow:2px 2px 2px 2px rgb(213, 249, 255);
+		}
+		img{
+			border-radius: 12px;
+		}
+	}
 }
 .credit {
 	position: relative;

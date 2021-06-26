@@ -125,13 +125,28 @@ body {
   border-left: 1px solid #cccccc; }
 
 #sign-up-anchor {
-  text-align: center; }
+  text-align: center;
+  margin-top: 8px; }
 
 #Sign-In-anchor {
-  text-align: center; }
+  text-align: center;
+  margin-top: 8px; }
 
 .select_option select:hover + .select_arrow, .select_option select:focus + .select_arrow {
   border-top-color: #000000; }
+
+#google-sign {
+  padding: 0;
+  text-align: center;
+  height: auto; }
+  #google-sign button {
+    padding: 2px;
+    border-radius: 12px;
+    border: 1px solid gray; }
+    #google-sign button:hover {
+      box-shadow: 2px 2px 2px 2px #d5f9ff; }
+    #google-sign button img {
+      border-radius: 12px; }
 
 .credit {
   position: relative;
