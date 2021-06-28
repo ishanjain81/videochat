@@ -4,6 +4,8 @@ const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/mongoose');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 //Setting Up Session Cookie
 const cookieParser = require('cookie-parser');
@@ -90,6 +92,9 @@ app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
 
+// Setting Up Flash Messages
+app.use(flash());
+app.use(customMware.setFlash);
 
 // use express router
 app.use('/', require('./routes'));
