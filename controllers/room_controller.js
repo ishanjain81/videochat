@@ -12,6 +12,7 @@ module.exports.invite = function(req,res){
     if(req.xhr){
         invite.inviteLink(req.body);
         // console.log(req.body);
+        req.flash('success', 'Invite Send Successfully');
         return res.status(200).json({
             message: "Invite Send!"
         });

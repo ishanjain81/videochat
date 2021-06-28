@@ -26,17 +26,22 @@ module.exports.signIn = function(req,res){
 //creating a User in DB
 module.exports.create = function(req,res){
     if(req.body.password != req.body.confirm_password){
+        req.flash('error', 'Passwords do not Match');
         return res.redirect('back');
     }
     User.findOne({email: req.body.email},function(err, user){
-        if(err){console.log("Error",err); return}
+        // if(err){console.log("Error",err); return}
+        if(err){req.flash('error', err); return}
         if(!user){
             User.create(req.body,function(err,user){
-                if(err){console.log('Error in creating a User',err); return}
+                if(err){req.flash('error', err); return}
+                // if(err){console.log('Error in creating a User',err); return}
+                req.flash('success', 'You have Signed Up, Login to continue!');
                 return res.redirect('/users/sign-in');
             });
         }
         else{
+            req.flash('error', 'User Already exits ! Please Sign in');
             return res.redirect('/users/sign-in');
         }
     });

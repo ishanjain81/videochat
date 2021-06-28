@@ -77,7 +77,15 @@ $('#invite-forms').submit(function(e){
         url: '/room/invite',
         data: d,
         success: function(data){
-          console.log(data);
+              console.log(data);
+              new Noty({
+                theme: 'relax',
+                text: "Invite Link Send Successfully",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1500
+                
+            }).show();
         },error: function(error){
           console.log(error.resposeText);
         }
