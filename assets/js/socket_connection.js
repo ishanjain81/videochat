@@ -82,6 +82,7 @@ socket.on('connect',function(){
             socket.emit('send_message',{
                 message: msg,
                 roomId: roomId,
+                user_name: user_name,
                 id : myId
             });
             msgContainer.value = ""
@@ -96,6 +97,7 @@ socket.on('connect',function(){
                 socket.emit('send_message',{
                     message: msg,
                     roomId: roomId,
+                    user_name: user_name,
                     id : myId
                 });
                 msgContainer.value = ""
@@ -119,6 +121,9 @@ socket.on('connect',function(){
 
         newMessage.append($('<br>'));
 
+        // newMessage.append($('<sub>',{
+        //     'html' : data.user_name
+        // }));
 
         newMessage.addClass(messageType);
 
