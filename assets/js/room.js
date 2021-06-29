@@ -7,10 +7,16 @@ videoStop.addEventListener('click', () => {
     const vButton = document.getElementById('videoStop').children[0];
     if (enabled) {
       myVideoStream.getVideoTracks()[0].enabled = false;
-      vButton.classList.add('options-color');
+      html = '<i class="fas fa-video-slash"></i>';
+      vButton.classList.remove('background-color-blue');
+      vButton.classList.add('background-color-red');
+      vButton.innerHTML = html;
     } else {
       myVideoStream.getVideoTracks()[0].enabled = true;
-      vButton.classList.remove('options-color');
+      html = '<i class="fas fa-video"></i>'
+      vButton.classList.add('background-color-blue');
+      vButton.classList.remove('background-color-red');
+      vButton.innerHTML = html;
     }
 });
 
@@ -19,10 +25,16 @@ muteButton.addEventListener('click', () => {
     const aButton = document.getElementById('muteButton').children[0];
     if (enabled) {
       myVideoStream.getAudioTracks()[0].enabled = false;
-      aButton.classList.add('options-color');
+      html = '<i class="fas fa-microphone-slash"></i>'
+      aButton.classList.remove('background-color-blue');
+      aButton.classList.add('background-color-red');
+      aButton.innerHTML = html;
     } else {
       myVideoStream.getAudioTracks()[0].enabled = true;
-      aButton.classList.remove('options-color');
+      html = '<i class="fas fa-microphone"></i>'
+      aButton.classList.add('background-color-blue');
+      aButton.classList.remove('background-color-red');
+      aButton.innerHTML = html;
     }
 });
 
@@ -55,13 +67,26 @@ chatButton.addEventListener('click',() => {
 const friendOpen = document.getElementById('friend-open');
 const friendClose = document.getElementById('friend-close');
 const friendBox = document.getElementById('friend-box');
+const copyUrl = document.getElementById('copy-url');
 
 friendOpen.addEventListener('click',() => {
     friendBox.classList.add('show');
+    document.getElementById("invite-link-value").value = window.location.href;
+    let copyText = document.getElementById("invite-link-value");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
 });
 
 friendClose.addEventListener('click',() => {
   friendBox.classList.remove('show');
+});
+
+//Copy Current Url
+copyUrl.addEventListener('click', () => {
+    let copyText = document.getElementById("invite-link-value");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
 });
 
 // Invite Link

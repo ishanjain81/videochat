@@ -68,7 +68,8 @@ video {
   border: 1px solid red; }
   #left-options div {
     display: inline-block;
-    margin: 2px; }
+    margin-left: 6px;
+    margin-right: 6px; }
 
 .options-color {
   color: red; }
@@ -131,6 +132,21 @@ video {
   margin: 5px;
   color: red; }
 
+#add-friend {
+  position: absolute;
+  right: 2%; }
+
+#invite-link input {
+  width: 76%;
+  height: 35px;
+  outline: none;
+  border: 0.5px solid black;
+  font-size: 18px;
+  padding: 8px; }
+
+#invite-link button {
+  height: 35px; }
+
 #invite-form {
   margin: 5px; }
   #invite-form form input {
@@ -141,5 +157,18 @@ video {
     font-size: 18px;
     padding: 8px; }
   #invite-form form button {
-    height: 33px;
+    height: 35px;
     color: blue; }
+
+.button-design button {
+  border: 0.5px solid gray;
+  height: 42px;
+  width: 40px;
+  border-radius: 10px;
+  color: white; }
+
+.background-color-blue {
+  background-color: #3a56f1; }
+
+.background-color-red {
+  background-color: #d32418; }

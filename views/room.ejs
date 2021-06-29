@@ -17,17 +17,17 @@
             <div id="video-box"></div>
         </div>
         <div id="left-options">
-            <div id="videoStop">
-                <button> Video </button>
+            <div id="videoStop" class="button-design">
+                <button class="background-color-blue"> <i class="fas fa-video"></i> </button>
             </div>
-            <div id="muteButton">
-                <button> Audio </button>
+            <div id="muteButton" class="button-design">
+                <button class="background-color-blue"><i class="fas fa-microphone"></i></button>
             </div>
-            <div id="chat-show">
-                <button> Chat </button>
+            <div id="chat-show" class="button-design">
+                <button class="background-color-blue"> <i class="fas fa-comment-lines"></i> </button>
             </div>
-            <div id="add-friend">
-                <button id="friend-open"> Add </button>
+            <div id="add-friend" class="button-design">
+                <button id="friend-open" class="background-color-blue"> <i class="fas fa-user-plus"></i> </button>
             </div>
         </div>
     </div>
@@ -36,10 +36,16 @@
     </div>
     <div id="friend-box" class="friend_box">
         <div class="friend">
-            <h3>Invite a Friend via Mail</h3>
+            <h5>INVITE VIA LINK</h5>
             <button id="friend-close">
                 <i class="fas fa-times"></i>
             </button>
+            <div id="invite-link">
+                <input id="invite-link-value" type="text" value="Hey">
+                <button id="copy-url">Copy</button>
+            </div>
+            <h5>OR</h5>
+            <h5>INVITE VIA EMAIL</h5>
             <div id="invite-form">
                 <form action="/room/invite" method="POST" id="invite-forms">
                     <input type="email" name="email" placeholder="Enter friend's Email" required>

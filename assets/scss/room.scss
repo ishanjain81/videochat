@@ -72,7 +72,8 @@ video{
     border: 1px solid red;
     div{
         display: inline-block;
-        margin: 2px;
+        margin-left: 6px;
+        margin-right: 6px;
     }
 }
 .options-color{
@@ -145,6 +146,25 @@ video{
     color: red;
 }
 
+#add-friend{
+    position: absolute;
+    right: 2%;
+}
+
+#invite-link{
+    input{
+        width: 76%;
+        height: 35px;
+        outline: none;
+        border: 0.5px solid black;
+        font-size: 18px;
+        padding: 8px;
+    }
+    button{
+        height: 35px;
+    }
+}
+
 #invite-form{
     margin: 5px;
     // border: 1px solid black;
@@ -158,8 +178,26 @@ video{
             padding: 8px;
         }
         button{
-            height: 33px;
+            height: 35px;
             color: blue;
         }
     }
+}
+
+.button-design{
+    button{
+        border: 0.5px solid gray;
+        height: 42px;
+        width: 40px;
+        border-radius: 10px;
+        color: white;
+    }
+}
+
+.background-color-blue{
+    background-color: rgb(58, 86, 241);
+}
+
+.background-color-red{
+    background-color: rgb(211, 36, 24);
 }
