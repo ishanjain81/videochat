@@ -12,3 +12,7 @@ module.exports.make_call = function(req,res){
     // return res.redirect(`/room?id=${room_id}`);
     return res.redirect(`/room/${room_id}`);
 }
+
+module.exports.join_call = function(req,res){
+    return res.redirect(`/room/${req.body.code}`);
+}

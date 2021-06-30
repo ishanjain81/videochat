@@ -255,4 +255,8 @@ body {
   .form_container .row .col_half.last {
     border-left: none; }
   .remember_me {
-    padding-bottom: 20px; } }
+    padding-bottom: 20px; }
+  #google-sign button {
+    width: 100%; }
+    #google-sign button img {
+      width: 100%; } }
