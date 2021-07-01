@@ -18,6 +18,7 @@
     top: 0%;
     margin-top: 0;
     box-sizing: border-box;
+    // background-color: rgb(26, 25, 25);
 }
 #right-part{
     // width: 26%;
@@ -69,7 +70,8 @@ video{
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 1px solid red;
+    // border: 1px solid red;
+    background-color: rgb(250, 249, 246);
     div{
         display: inline-block;
         margin-left: 6px;
@@ -162,6 +164,9 @@ video{
     }
     button{
         height: 35px;
+        padding: 2px;
+        width: auto;
+        color: rgb(0, 132, 255);
     }
 }
 
@@ -179,7 +184,7 @@ video{
         }
         button{
             height: 35px;
-            color: blue;
+            color: rgb(0, 132, 255);
         }
     }
 }
@@ -195,9 +200,56 @@ video{
 }
 
 .background-color-blue{
-    background-color: rgb(58, 86, 241);
+    background-color: rgb(0, 132, 255);
 }
 
 .background-color-red{
     background-color: rgb(211, 36, 24);
+}
+
+@media (max-width: 600px) {
+    #video-box{
+        flex-direction: column;
+    }
+    video{
+        width: 99%;
+        height: 52%;
+    }
+    #left-part{
+        border: none;
+    }
+    #right-part{
+        display: inline-block;
+        border: 1px solid black;
+        height: 87%;
+        box-sizing: border-box;
+        position: fixed;
+        right: 0%;
+        top: 5%;
+    }
+    .m-top{
+        margin-top: 2px;
+    }
+    .m-topless{
+        margin-top: 2px;
+    }
+    #left-options{
+        position: fixed;
+        bottom: 1%;
+    }
+    #add-friend{
+        position: static;
+    }
+    .right-show{
+        transition-timing-function: ease-in-out;
+        transition : width 1.8s;
+        width: 100%;
+    }
+    .right-hide{
+        width: 0%;
+    }
+    .friend{
+        max-width: 95%;
+        left: 2%;
+    }
 }

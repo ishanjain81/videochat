@@ -65,7 +65,7 @@ video {
   display: flex;
   justify-content: center;
   text-align: center;
-  border: 1px solid red; }
+  background-color: #faf9f6; }
   #left-options div {
     display: inline-block;
     margin-left: 6px;
@@ -145,7 +145,10 @@ video {
   padding: 8px; }
 
 #invite-link button {
-  height: 35px; }
+  height: 35px;
+  padding: 2px;
+  width: auto;
+  color: #0084ff; }
 
 #invite-form {
   margin: 5px; }
@@ -158,7 +161,7 @@ video {
     padding: 8px; }
   #invite-form form button {
     height: 35px;
-    color: blue; }
+    color: #0084ff; }
 
 .button-design button {
   border: 0.5px solid gray;
@@ -168,7 +171,42 @@ video {
   color: white; }
 
 .background-color-blue {
-  background-color: #3a56f1; }
+  background-color: #0084ff; }
 
 .background-color-red {
   background-color: #d32418; }
+
+@media (max-width: 600px) {
+  #video-box {
+    flex-direction: column; }
+  video {
+    width: 99%;
+    height: 52%; }
+  #left-part {
+    border: none; }
+  #right-part {
+    display: inline-block;
+    border: 1px solid black;
+    height: 87%;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0%;
+    top: 5%; }
+  .m-top {
+    margin-top: 2px; }
+  .m-topless {
+    margin-top: 2px; }
+  #left-options {
+    position: fixed;
+    bottom: 1%; }
+  #add-friend {
+    position: static; }
+  .right-show {
+    transition-timing-function: ease-in-out;
+    transition: width 1.8s;
+    width: 100%; }
+  .right-hide {
+    width: 0%; }
+  .friend {
+    max-width: 95%;
+    left: 2%; } }

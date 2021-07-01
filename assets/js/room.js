@@ -2,6 +2,15 @@ const videoStop = document.querySelector('#videoStop');
 const muteButton = document.querySelector('#muteButton');
 const chatButton = document.querySelector('#chat-show');
 
+let a = 1;
+if(chat == false && a == 1){
+  let leftPart = document.getElementById('left-part');
+  let rightPart = document.getElementById('right-part');
+  leftPart.classList.add('left-full');
+  rightPart.classList.add('right-hide');
+  a = 0;
+}
+
 videoStop.addEventListener('click', () => {
     const enabled = myVideoStream.getVideoTracks()[0].enabled;
     const vButton = document.getElementById('videoStop').children[0];

@@ -1,7 +1,13 @@
 
 <script>
     const roomId = "<%= roomId %>"
-    let chat = true;
+    let chat;
+    if(screen.width > 600){
+        chat = true;
+    }
+    else{
+        chat = false;
+    }
     const user_name = "<%= locals.user.first_name %>";
 </script>
 <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
