@@ -1,4 +1,6 @@
 const express = require('express');
+const env = require('./config/environment');
+const logger = require('morgan');
 const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
@@ -8,7 +10,6 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 const path = require('path');
 const favicon = require('serve-favicon');
-const env = require('./config/environment');
 
 // Setting Favicon
 app.use(favicon(path.join(__dirname,'/assets/images/favi.ico'))); 
@@ -41,13 +42,15 @@ app.use('/peerjs', peerServer);
 console.log('Peer server is listening on port 5001');
 
 //setting up sass
-app.use(sassMiddleware({
-    src : './assets/scss',
-    dest : './assets/css',
-    debug : true,
-    outputStyle : 'extended',
-    prefix : '/css'
-}));
+if(env.name == 'development'){
+    app.use(sassMiddleware({
+        src : './assets/scss',
+        dest : './assets/css',
+        debug : true,
+        outputStyle : 'extended',
+        prefix : '/css'
+    }));
+}
 
 //setting static files
 app.use(express.static('./assets'));
@@ -60,6 +63,9 @@ app.use(express.urlencoded({
 
 //Setting Up Cookies
 app.use(cookieParser());
+
+// Setting Up Morgan
+app.use(logger(env.morgan.mode,env.morgan.options));
 
 //using layouts
 app.use(expressLayouts);
