@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 const path = require('path');
 const favicon = require('serve-favicon');
+const env = require('./config/environment');
 
 // Setting Favicon
 app.use(favicon(path.join(__dirname,'/assets/images/favi.ico'))); 
