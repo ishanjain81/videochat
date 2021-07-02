@@ -6,6 +6,11 @@ const sassMiddleware = require('node-sass-middleware');
 const db = require('./config/mongoose');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+const path = require('path');
+const favicon = require('serve-favicon');
+
+// Setting Favicon
+app.use(favicon(path.join(__dirname,'/assets/images/favi.ico'))); 
 
 //Setting Up Session Cookie
 const cookieParser = require('cookie-parser');
