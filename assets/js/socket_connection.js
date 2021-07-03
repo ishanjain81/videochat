@@ -1,5 +1,5 @@
 
-const socket = io.connect('http://localhost:5000',{
+const socket = io.connect('http://54.227.78.176:5000',{
         transport: ['websocket'],
         withCredentials: true,
         extraHeaders: {
@@ -12,7 +12,7 @@ socket.on('connect',function(){
     console.log('Connection estlablished using sockets.....');
     const customGenerationFunction = () => (Math.random().toString(36) + '0000000000000000000').substr(2, 16);
     const myPeer = new Peer({
-        host : 'localhost',
+        host : '54.227.78.176',
         port : '5001',
         path : '/peerjs',
         generateClientId: customGenerationFunction
