@@ -5,3 +5,6 @@ module.exports.setFlash = function(req,res,next){
     }
     next();
 }
+
+
+// middleware for notifications

@@ -34,19 +34,20 @@ socket.on('connect',function(){
     }).then(stream =>{
         streamVideo(myVideo,stream);
         myVideoStream = stream;
-        myPeer.on('call',function(call){
-            call.answer(stream);
+        myPeer.on('call',function(call){     // making a call to peer
+            call.answer(stream);            // answering a call
             const video = document.createElement('video');
             video.classList.add('m-top');
-            peers[call.peer] = call;
+            peers[call.peer] = call;        // storing peerid to ending the call
             call.on('stream',function(userVideoStream){
                 streamVideo(video,userVideoStream);
             });
             call.on('close',function(){
-                video.remove();
+                video.remove();             // ending the call on disconnection
             });
         });
 
+        // event called when a user connected in a room
         socket.on('user_connected',function(userId){
             console.log(`User connected : ${userId}`);
             
@@ -56,7 +57,7 @@ socket.on('connect',function(){
             // connectToNewUser(userId,stream);
         });
     });
-
+    // event called when a user disconnected from a room
     socket.on('user_disconnected',userId => {
         console.log('User Disconnected:' + userId);
             if(peers[userId]){
@@ -104,15 +105,15 @@ socket.on('connect',function(){
             }
         }
     });
-    socket.on('recieve_message',function(data){
-        console.log('message recieved',data.message);
+    socket.on('recieve_message',function(data){         // recieving messages and
+        console.log('message recieved',data.message);   // add it to the chat box
 
         let newMessage = $('<li>');
 
         let messageType = 'other-message';
 
         if(data.id == myId){
-            messageType = 'self-message';
+            messageType = 'self-message';       // decideding message type
         }
 
         newMessage.append($('<span>',{
@@ -134,7 +135,7 @@ socket.on('connect',function(){
         chatList.scrollTop = chatList.scrollHeight - chatList.clientHeight;
     });
 
-
+    // function called when a new user entered in a room
     function connectToNewUser(userId,stream){
         const call = myPeer.call(userId,stream);
         const video = document.createElement('video');
@@ -154,6 +155,7 @@ socket.on('connect',function(){
         peers[userId] = call;
     }
     
+    // function for stream user video on screen
     function streamVideo(video,stream){
         video.srcObject = stream;
         video.addEventListener('loadedmetadata',function(){

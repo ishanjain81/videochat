@@ -11,7 +11,7 @@ const accessLogStream = rfs.createStream('access.log',{
     path: logDirectory
 });
 
-
+// development environment
 const development = {
     name: 'development',
     db: 'teamsClone',
@@ -33,7 +33,7 @@ const development = {
         options: {stream: accessLogStream}
     }
 }
-
+// production environment
 const production = {
     name: 'production',
     db: 'CloneProduction',

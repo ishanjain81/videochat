@@ -10,7 +10,7 @@ if(chat == false && only_once == 1){
   rightPart.classList.add('right-hide');
   only_once = 0;
 }
-
+// video button to on & off video
 videoStop.addEventListener('click', () => {
     const enabled = myVideoStream.getVideoTracks()[0].enabled;
     const vButton = document.getElementById('videoStop').children[0];
@@ -28,7 +28,7 @@ videoStop.addEventListener('click', () => {
       vButton.innerHTML = html;
     }
 });
-
+// audio button to on & off audio
 muteButton.addEventListener('click', () => {
     const enabled = myVideoStream.getAudioTracks()[0].enabled;
     const aButton = document.getElementById('muteButton').children[0];
@@ -46,7 +46,7 @@ muteButton.addEventListener('click', () => {
       aButton.innerHTML = html;
     }
 });
-
+// button for hiding chat box
 chatButton.addEventListener('click',() => {
     let leftPart = document.getElementById('left-part');
     let rightPart = document.getElementById('right-part');
