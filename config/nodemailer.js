@@ -2,9 +2,9 @@ const nodemailer = require("nodemailer");
 const ejs = require('ejs');
 const path = require('path');
 const env = require('./environment');
-
+// setting mailer
 let transporter = nodemailer.createTransport(env.smtp);
-
+// use ejs as template for sending mails
 let renderTemplate = (data,relativePath) => {
     let mailHTML;
     ejs.renderFile(
