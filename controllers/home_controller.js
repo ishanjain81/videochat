@@ -8,7 +8,7 @@ module.exports.home = function(req,res){
 // making call
 module.exports.make_call = function(req,res){
     let room_id = uuidv4();     // unique ids for calls
-    if(!req.isAuthenticated()){
+    if(!req.isAuthenticated()){ // if user not logged in got to sign in
         req.flash('success','Please ! Login to Continue');
         return res.redirect('/users/sign-in');
     }

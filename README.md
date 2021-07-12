@@ -5,6 +5,10 @@ Building Microsoft Teams Clone for smooth Video Conferencing and Chatting with f
 
 ## Screenshots
 
+![Home Page](uploads/homePage-ss.png "Home Page")
+![Call Page](uploads/Call-ss.png "call Page")
+![Sign Up Page](uploads/Sign-up-ss.png "Sign Up Page")
+![Mailer Page](uploads/mailer-ss.png "Mailer Page")
 
 ## Technologies Stack:
 

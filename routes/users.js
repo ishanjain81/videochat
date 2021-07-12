@@ -4,10 +4,11 @@ const passport = require('passport');
 
 const usersController = require('../controllers/users_controller');
 
+// sign up 
 router.get('/sign-up',usersController.signUp);
-
+// sign in
 router.get('/sign-in',usersController.signIn);
-
+// creating a user in db
 router.post('/create',usersController.create);
 
 
