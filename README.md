@@ -14,13 +14,19 @@ Building Microsoft Teams Clone for smooth Video Conferencing and Chatting with f
 - Javascript,AJAX,jquery
 - Sass,css
 - Nodemailer
+- Notyjs
+- uuidv4
 
 ### Insights
 - used socket.io and Peerjs for implementing Video call and Chat.
+- Camera and Microphone turn on/off feature.
+- button for hiding and enlarging the chat box
+- uuidv4 for generating random urls.
 - passport-jwt strategy for authentication and authorization.
 - passport-google-oauth2 strategy for social authentication through google.
 - used Nodemailer to send out emails.
 - used morgan to make production logs
+- Notyjs for display notifications
 
 ### How to install
 - Clone the project onto your local machine.
