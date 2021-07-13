@@ -37,6 +37,7 @@ Building Microsoft Teams Clone for smooth Video Conferencing and Chatting with f
 - Then cd videochat
 - npm install to install dependencies
 - globally install nodemon
-- nodemon index.js = to run server in development mode
-- npm run prod_start = to run server in production mode
+- globally install and set mongodb
+- nodemon index.js (run server in development mode)
+- npm run prod_start (to run server in production mode)
 - Visit your app at http://localhost:8000

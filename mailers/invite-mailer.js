@@ -11,8 +11,8 @@ exports.inviteLink = (data) => {
         html: htmlString
     },(err,info) => {
         if(err){console.log('Error in Sending Mail',err); return}
-
-        console.log('Mail Sent', info);
+        // Mail information
+        // console.log('Mail Sent', info);
         return;
     });
 }

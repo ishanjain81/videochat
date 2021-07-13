@@ -21,12 +21,12 @@ const development = {
         port: 587,
         secure: false,
         auth: {
-            user: process.env.WEB_GMAIL_ID,  // Gmail Id
-            pass: process.env.WEB_GMAIL_PASSWORD // Gmail Password
+            user: 'icoolishan2000@gmail.com',  // Gmail Id
+            pass: '987654321@' // Gmail Password
         }
-    },
-    google_client_id: process.env.WEB_GOOGLE_CLIENT_ID,
-    google_client_secret: process.env.WEB_GOOGLE_CLIENT_SECRET,
+    },  // google oauth 2 credentials
+    google_client_id: '330522351441-qfcv1nt45uofda77kdoilm0ilpj54sh3.apps.googleusercontent.com',
+    google_client_secret: 'zVeue7D5_squH4q8XlyujPaq',
     google_call_back_url: 'http://localhost:8000/users/auth/google/callback',
     morgan: {
         mode: 'dev',

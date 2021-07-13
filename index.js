@@ -41,9 +41,9 @@ pServer.listen(5001);
 app.use('/peerjs', peerServer);
 console.log('Peer server is listening on port 5001');
 
-//setting up sass
-if(env.name == 'development'){
-    app.use(sassMiddleware({
+//setting up sass middleware
+if(env.name == 'development' && false){ // whenever we have to change sass files
+    app.use(sassMiddleware({            // remove && false from here
         src : './assets/scss',
         dest : './assets/css',
         debug : true,
