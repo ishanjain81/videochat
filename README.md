@@ -3,10 +3,6 @@
 ## Description
 Building Microsoft Teams Clone for smooth Video Conferencing and Chatting with friends with Authentication of users and automatic invite email feature.
 
-## See Live Demo
-
-### visit --> http://54.227.78.176:8000
-
 Note - To get access to Video camera and Microphone with http protocol we have to whitelist the website URL in the browser, for that
 - go to chrome://flags
 - Insecure origins treated as secure
